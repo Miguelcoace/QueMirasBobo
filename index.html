@@ -41,22 +41,17 @@
             font-size: 6vw; /* Tamaño de fuente del botón ajustado para dispositivos móviles */
         }
 
-        /* Estilos para el gif de fondo en dispositivos móviles */
-        @media only screen and (max-width: 600px) {
-            body {
-                background-image: url('leo-messi.gif'); /* Cambiar el fondo por el GIF en dispositivos móviles */
-                background-size: cover; /* Ajustar el tamaño del fondo para dispositivos móviles */
-            }
-
-            #texto {
-                font-size: 12vw; /* Ajustar el tamaño de fuente del texto para dispositivos móviles */
-                margin-top: 20vh;
-            }
-
-            .custom-button {
-                font-size: 10vw; /* Ajustar el tamaño de fuente del botón para dispositivos móviles */
-                padding: 5vw 10vw; /* Ajuste del padding del botón para dispositivos móviles */
-            }
+        /* Estilos para el gif de fondo */
+        .gif-background {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('leo-messi.gif');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -67,16 +62,17 @@
     <!-- Botón personalizado para reproducir el audio -->
     <button class="custom-button" onclick="reproducirAudio()">Resident Evil</button>
 
+    <div class="gif-background"></div> <!-- Div para el gif de fondo -->
     <p id="texto">Que mira bobo, anda abre el regalo</p>
 </div>
 
 <script>
     function reproducirAudio() {
-        var audio = new Audio('que-miras-bobo-messi.mp3'); // Crear un elemento de audio
-        audio.play(); // Reproducir el audio
-
         var fondo = document.querySelector('body');
-        fondo.style.backgroundImage = "url('leo-messi.gif')"; // Cambiar el fondo por el GIF cuando se presiona el botón de play
+        fondo.style.backgroundImage = "url('otra-imagen.jpg')"; // Cambiar la imagen de fondo antes de hacer clic en el botón
+
+        var gifBackground = document.querySelector('.gif-background');
+        gifBackground.style.display = 'block'; // Mostrar el gif de fondo al hacer clic en el botón
 
         var boton = document.querySelector('.custom-button');
         boton.style.display = 'none'; // Ocultar el botón después de hacer clic
