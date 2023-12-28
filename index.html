@@ -26,19 +26,37 @@
         /* Estilo para ocultar el texto por defecto */
         #texto {
             display: none;
-            font-size: 80px; /* Tamaño de fuente más grande */
+            font-size: 8vw; /* Tamaño de fuente más grande ajustado para dispositivos móviles */
             color: rgb(0, 0, 0); /* Color rojo */
-            margin-top: 20px;
+            margin-top: 10vh;
         }
 
         /* Estilos para el botón personalizado */
         .custom-button {
-            padding: 10px 20px;
+            padding: 3vw 6vw; /* Ajuste del padding del botón */
             background-color: #00ffff;
             color: rgb(8, 0, 0);
             border: none;
             cursor: pointer;
-            font-size: 60px;
+            font-size: 6vw; /* Tamaño de fuente del botón ajustado para dispositivos móviles */
+        }
+
+        /* Estilos para el gif de fondo en dispositivos móviles */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-image: url('leo-messi.gif'); /* Cambiar el fondo por el GIF en dispositivos móviles */
+                background-size: cover; /* Ajustar el tamaño del fondo para dispositivos móviles */
+            }
+
+            #texto {
+                font-size: 12vw; /* Ajustar el tamaño de fuente del texto para dispositivos móviles */
+                margin-top: 20vh;
+            }
+
+            .custom-button {
+                font-size: 10vw; /* Ajustar el tamaño de fuente del botón para dispositivos móviles */
+                padding: 5vw 10vw; /* Ajuste del padding del botón para dispositivos móviles */
+            }
         }
     </style>
 </head>
